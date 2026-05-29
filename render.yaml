@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: maintenance-system
+    env: node
+    plan: free
+    branch: main
+    buildCommand: cd frontend && npm ci && npm run build && cd ../backend && npm ci
+    startCommand: cd backend && npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        value: "5000"
+        sync: false
