@@ -1,4 +1,4 @@
-# CampusFix
+# UniFix Portal
 
 A full-stack maintenance request system for a university environment.
 
@@ -12,7 +12,14 @@ A full-stack maintenance request system for a university environment.
 ## Setup
 
 1. Create the PostgreSQL database and run `backend/schema.sql`.
-2. Start the backend:
+2. Install dependencies:
+
+```bash
+npm --prefix backend install
+npm --prefix frontend install
+```
+
+3. Start the backend:
 
 ```bash
 cd backend
@@ -20,7 +27,7 @@ npm install
 npm start
 ```
 
-3. Start the frontend:
+4. Start the frontend:
 
 ```bash
 cd frontend
@@ -28,7 +35,24 @@ npm install
 npm run dev
 ```
 
-4. Update `frontend/.env` if your API is not running at `http://localhost:5000/api`.
+5. Update `frontend/.env` if your API is not running at `http://localhost:5000/api`.
+
+### Quick start from project root
+
+If you are in the root folder and `npm start` fails, use these commands:
+
+```bash
+# backend only
+npm start
+
+# frontend only
+npm run start:frontend
+
+# backend + frontend together (after running `npm install` in root once)
+npm run dev
+```
+
+`Live Server` is for static sites only and will not run this app because it needs a Node.js API and PostgreSQL connection.
 
 ## Notes
 

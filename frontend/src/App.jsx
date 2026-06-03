@@ -19,12 +19,13 @@ const emptyForm = {
 
 const statusOptions = ['Pending', 'In Progress', 'Resolved'];
 const urgencyOptions = ['Low', 'Medium', 'High'];
+const AUTH_STORAGE_KEY = 'unifix-portal-auth';
 
 function App() {
   const [authMode, setAuthMode] = useState('login');
   const [auth, setAuth] = useState(() => {
     try {
-      const saved = localStorage.getItem('campusfix-auth');
+      const saved = localStorage.getItem(AUTH_STORAGE_KEY);
       return saved ? JSON.parse(saved) : null;
     } catch {
       return null;
@@ -44,9 +45,9 @@ function App() {
 
   useEffect(() => {
     if (auth) {
-      localStorage.setItem('campusfix-auth', JSON.stringify(auth));
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(auth));
     } else {
-      localStorage.removeItem('campusfix-auth');
+      localStorage.removeItem(AUTH_STORAGE_KEY);
     }
   }, [auth]);
 
@@ -174,7 +175,7 @@ function App() {
       <header className="hero">
         <div className="hero-copy">
           <span className="eyebrow">Zambia University of Technology</span>
-          <h1>CampusFix</h1>
+          <h1>UniFix Portal</h1>
           <p>
             A maintenance request system for student accommodation, lecture rooms, and shared campus spaces.
           </p>
