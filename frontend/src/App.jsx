@@ -175,16 +175,16 @@ function App() {
       <header className="hero">
         <div className="hero-copy">
           <span className="eyebrow">Zambia University of Technology</span>
-          <h1>UniFix Portal</h1>
+          <h1><span className="brand-mark">UF</span>UniFix Portal</h1>
           <p>
             A maintenance request system for student accommodation, lecture rooms, and shared campus spaces.
           </p>
           <div className="hero-points">
-            <span>Authentication</span>
-            <span>CRUD Operations</span>
-            <span>PostgreSQL</span>
-            <span>File Uploads</span>
-            <span>Responsive React UI</span>
+            <span><span className="point-icon">AU</span>Authentication</span>
+            <span><span className="point-icon">CR</span>CRUD Operations</span>
+            <span><span className="point-icon">DB</span>PostgreSQL</span>
+            <span><span className="point-icon">UP</span>File Uploads</span>
+            <span><span className="point-icon">UI</span>Responsive React UI</span>
           </div>
         </div>
         <div className="hero-card">
@@ -298,7 +298,7 @@ function App() {
 
           <div className="content-grid">
             <section className="panel">
-              <h3>Submit a Maintenance Request</h3>
+              <h3 className="section-title">Submit a Maintenance Request</h3>
               <form onSubmit={handleRequestSubmit} className="stack">
                 <label>
                   Title
@@ -360,7 +360,7 @@ function App() {
 
             <section className="panel">
               <div className="section-head">
-                <h3>{auth.role === 'admin' ? 'All Requests' : 'My Requests'}</h3>
+                <h3 className="section-title">{auth.role === 'admin' ? 'All Requests' : 'My Requests'}</h3>
                 <span>{loading ? 'Loading...' : `${requests.length} records`}</span>
               </div>
 
